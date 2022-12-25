@@ -1,8 +1,9 @@
 import Route from './router/route';
 import Router from './router/router';
 import headerScript from './components/header';
+import handleGarage from './components/garage';
 
-const garageRoute = new Route('garage', 'garage.html', null, true);
+const garageRoute = new Route('garage', 'garage.html', handleGarage, true);
 const winnersRoute = new Route('winners', 'winners.html');
 export default new Router([garageRoute, winnersRoute]);
 fetch(`${__dirname}src/views/header.html`)
