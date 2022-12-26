@@ -17,7 +17,6 @@ export default function handleGarage() {
   updateForm.addEventListener('submit', function updateHandler(ev) {
     handleUpdate(ev, this, container);
   });
-  // fetchToView();
   handlePage();
   const generateBtn = document.getElementById('generate');
   generateBtn.onclick = () => {
@@ -27,11 +26,17 @@ export default function handleGarage() {
   const prevBtn = paginContainer.querySelector('button:first-of-type');
   const nextBtn = paginContainer.querySelector('button:last-of-type');
   nextBtn.onclick = () => {
+    prevBtn.disabled = false;
     setPage(getPage() + 1);
     handlePage();
   };
-  prevBtn.onclick = () => {
-    setPage(getPage() - 1);
+  prevBtn.onclick = function handler() {
+    const page = getPage();
+    if (page === 2) {
+      this.disabled = true;
+    }
+    nextBtn.disabled = false;
+    setPage(page - 1);
     handlePage();
   };
 }

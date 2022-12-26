@@ -2,7 +2,7 @@ import carContainer from '../components/carContainer';
 import { CARS_PER_PAGE } from '../SETTINGS';
 import * as api from './api';
 import carsGenerate from './generateCars';
-import { getPage } from './storage';
+import { getPage, getTotal } from './storage';
 
 export const fetchToView = () => {
   const container = document.querySelector('.cars-container');
@@ -12,6 +12,7 @@ export const fetchToView = () => {
       const { name, color, id } = car;
       container.appendChild(carContainer(name, color, id));
     });
+    document.getElementById('total').innerText = getTotal();
   });
 };
 export const handleCreate = (ev, form, container) => {
@@ -25,13 +26,17 @@ export const handleCreate = (ev, form, container) => {
 };
 export const handleUpdate = (ev, form, container) => {
   ev.preventDefault();
-  const { id: formId, name: formName, color: formColor } = form;
+  const {
+    id: formId, name: formName, color: formColor, button,
+  } = form;
   api.updateCar(formId.value, formName.value, formColor.value).then((data) => {
     const { name, color, id } = data;
     container.replaceChild(
       carContainer(name, color, id),
       document.getElementById(`car#${id}`),
     );
+    form.reset();
+    button.disabled = true;
   });
 };
 export const handleGenerate = () => {

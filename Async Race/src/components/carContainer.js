@@ -1,4 +1,5 @@
 import { fetchCars, removeCar } from '../services/api';
+import { getTotal } from '../services/storage';
 import car from './car';
 
 export default function carContainer(name, color, id) {
@@ -22,6 +23,7 @@ export default function carContainer(name, color, id) {
     updateForm.id.value = id;
     updateForm.name.value = name;
     updateForm.color.value = color;
+    updateForm.button.disabled = false;
   };
   removeBtn.onclick = () => {
     const container = rootCtn.parentElement;
@@ -31,9 +33,11 @@ export default function carContainer(name, color, id) {
         data.forEach((eachCar) => {
           const { name: _name, color: _color, id: _id } = eachCar;
           container.appendChild(carContainer(_name, _color, _id));
+          document.getElementById('total').innerText = getTotal();
         });
       });
       updateForm.reset();
+      updateForm.button.disabled = true;
     });
   };
   return rootCtn;

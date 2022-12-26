@@ -1,13 +1,14 @@
 import { CARS_PER_PAGE, SERVER } from '../SETTINGS';
-import { getPage } from './storage';
+import { getPage, setTotal } from './storage';
 
 const headers = new Headers({
   'Content-Type': 'application/json',
 });
 const request = (url, options) => fetch(url, options).then((resp) => {
   if (!resp.ok) {
-    throw Error(resp.status);
+    throw Error(resp.status + resp.statusText);
   }
+  setTotal(resp.headers.get('X-total-Count'));
   return resp.json();
 });
 
