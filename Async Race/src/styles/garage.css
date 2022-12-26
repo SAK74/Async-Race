@@ -1,6 +1,19 @@
-.container{
+.container {
   background: black;
 }
-form input[name=id]{
+form input[name="id"] {
   display: none;
+}
+/* .stop-btn:before {
+  border: 10px solid black;
+  content: "";
+} */
+.car-container {
+  position: relative;
+  height: 80px;
+}
+.car-container svg {
+  position: absolute;
+  left: 0;
+  z-index: -1;
 }

@@ -4,10 +4,11 @@ import {
   handleGenerate,
   handlePage,
   handleUpdate,
-} from '../services/handlers';
+} from '../services/garageHandlers';
 import { getPage, setPage } from '../services/storage';
 
 export default function handleGarage() {
+  handlePage();
   const createForm = document.forms.create;
   const updateForm = document.forms.update;
   const container = document.querySelector('.cars-container');
@@ -17,7 +18,6 @@ export default function handleGarage() {
   updateForm.addEventListener('submit', function updateHandler(ev) {
     handleUpdate(ev, this, container);
   });
-  handlePage();
   const generateBtn = document.getElementById('generate');
   generateBtn.onclick = () => {
     handleGenerate();
@@ -32,9 +32,7 @@ export default function handleGarage() {
   };
   prevBtn.onclick = function handler() {
     const page = getPage();
-    if (page === 2) {
-      this.disabled = true;
-    }
+    this.toggleAttribute('disabled', page === 2);
     nextBtn.disabled = false;
     setPage(page - 1);
     handlePage();

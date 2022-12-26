@@ -2,7 +2,7 @@ import carContainer from '../components/carContainer';
 import { CARS_PER_PAGE } from '../SETTINGS';
 import * as api from './api';
 import carsGenerate from './generateCars';
-import { getPage, getTotal } from './storage';
+import { getPage } from './storage';
 
 export const fetchToView = () => {
   const container = document.querySelector('.cars-container');
@@ -12,12 +12,12 @@ export const fetchToView = () => {
       const { name, color, id } = car;
       container.appendChild(carContainer(name, color, id));
     });
-    document.getElementById('total').innerText = getTotal();
   });
 };
 export const handleCreate = (ev, form, container) => {
   ev.preventDefault();
   api.addCar(form.name.value, form.color.value).then((car) => {
+    document.getElementById('total').innerText = parseInt(document.getElementById('total').innerText, 10) + 1;
     if (container.children.length < CARS_PER_PAGE) {
       const { name, color, id } = car;
       container.appendChild(carContainer(name, color, id));

@@ -1,44 +1,36 @@
-import { fetchCars, removeCar } from '../services/api';
-import { getTotal } from '../services/storage';
-import car from './car';
+import { startHandler, AnimatedCar } from '../services/carDrive';
+import { handleRemove, handleSelect } from '../services/carHandlers';
+import carSVG from './car';
 
 export default function carContainer(name, color, id) {
   const selBtn = document.createElement('button');
   selBtn.innerText = 'Select car';
   const removeBtn = document.createElement('button');
   removeBtn.innerText = 'Remove car';
-  const goBtn = document.createElement('button');
-  goBtn.className = 'go-btn';
-  const stopBtn = document.createElement('button');
-  stopBtn.className = 'stop-btn';
   const carName = document.createElement('span');
   carName.innerText = name;
   const rootCtn = document.createElement('div');
+  rootCtn.classList.add('car-container');
   rootCtn.id = `car#${id}`;
-  [selBtn, removeBtn, goBtn, stopBtn, carName, car(color)].forEach((el) => {
+  const goBtn = document.createElement('button');
+  const stopBtn = document.createElement('button');
+  const car = carSVG(color);
+  [selBtn, removeBtn, goBtn, stopBtn, carName, car].forEach((el) => {
     rootCtn.appendChild(el);
   });
+  goBtn.className = 'go-btn button';
+  const animCar = new AnimatedCar(id, car);
+  goBtn.onclick = () => startHandler(id, animCar);
+  goBtn.innerText = '\u25B6';
+  stopBtn.className = 'stop-btn button';
+  stopBtn.innerText = '\u25FC';
+  stopBtn.onclick = () => animCar.stop();
   const updateForm = document.forms.update;
   selBtn.onclick = () => {
-    updateForm.id.value = id;
-    updateForm.name.value = name;
-    updateForm.color.value = color;
-    updateForm.button.disabled = false;
+    handleSelect(name, color, id, updateForm);
   };
   removeBtn.onclick = () => {
-    const container = rootCtn.parentElement;
-    removeCar(id).then(() => {
-      fetchCars().then((data) => {
-        container.innerHTML = null;
-        data.forEach((eachCar) => {
-          const { name: _name, color: _color, id: _id } = eachCar;
-          container.appendChild(carContainer(_name, _color, _id));
-          document.getElementById('total').innerText = getTotal();
-        });
-      });
-      updateForm.reset();
-      updateForm.button.disabled = true;
-    });
+    handleRemove(id, carContainer);
   };
   return rootCtn;
 }

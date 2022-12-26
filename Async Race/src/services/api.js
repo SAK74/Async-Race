@@ -1,5 +1,5 @@
 import { CARS_PER_PAGE, SERVER } from '../SETTINGS';
-import { getPage, setTotal } from './storage';
+import { getPage } from './storage';
 
 const headers = new Headers({
   'Content-Type': 'application/json',
@@ -8,7 +8,9 @@ const request = (url, options) => fetch(url, options).then((resp) => {
   if (!resp.ok) {
     throw Error(resp.status + resp.statusText);
   }
-  setTotal(resp.headers.get('X-total-Count'));
+  if (url.pathname === '/garage' && !options?.method) {
+    document.getElementById('total').innerText = resp.headers.get('X-total-Count');
+  }
   return resp.json();
 });
 
@@ -46,5 +48,16 @@ export const updateCar = (id, name, color) => {
     headers,
     method: 'PUT',
     body: JSON.stringify({ name, color }),
+  });
+};
+export const setStatus = (id, status) => {
+  const engineURL = new URL('/engine', SERVER);
+  const queryParam = new URLSearchParams({
+    id,
+    status,
+  });
+  engineURL.search = queryParam.toString();
+  return request(engineURL, {
+    method: 'PATCH',
   });
 };

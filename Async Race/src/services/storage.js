@@ -9,6 +9,3 @@ export const getTotal = () => {
   const storage = window.sessionStorage.getItem('garage-total');
   return storage || 0;
 };
-export const setTotal = (total) => {
-  window.sessionStorage.setItem('garage-total', total);
-};
