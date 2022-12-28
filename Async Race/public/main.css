@@ -20,4 +20,25 @@ form input[name="id"] {
   left: 0;
   z-index: -1;
 }
+/* .wheel {
+  animation: wheels 1s linear infinite;
+} */
+
+@keyframes wheels {
+  0% {
+    transform: translateY(-1px);
+  }
+  25% {
+    transform: translateX(-1px);
+  }
+  50% {
+    transform: translateY(1px);
+  }
+  75% {
+    transform: translateX(1px);
+  }
+  100% {
+    transform: translateY(-1px);
+  }
+}
 

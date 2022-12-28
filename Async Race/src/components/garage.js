@@ -6,6 +6,7 @@ import {
   handleUpdate,
 } from '../services/garageHandlers';
 import { getPage, setPage } from '../services/storage';
+import { resetRace, startRace } from '../services/race';
 
 export default function handleGarage() {
   handlePage();
@@ -36,5 +37,13 @@ export default function handleGarage() {
     nextBtn.disabled = false;
     setPage(page - 1);
     handlePage();
+  };
+  const raceBtn = document.getElementById('race');
+  raceBtn.onclick = () => {
+    startRace();
+  };
+  const resetBtn = document.getElementById('reset');
+  resetBtn.onclick = () => {
+    resetRace();
   };
 }

@@ -4,6 +4,7 @@ import { getPage } from './storage';
 const headers = new Headers({
   'Content-Type': 'application/json',
 });
+
 const request = (url, options) => fetch(url, options).then((resp) => {
   if (!resp.ok) {
     throw Error(resp.status + resp.statusText);
@@ -50,6 +51,7 @@ export const updateCar = (id, name, color) => {
     body: JSON.stringify({ name, color }),
   });
 };
+
 export const setStatus = (id, status) => {
   const engineURL = new URL('/engine', SERVER);
   const queryParam = new URLSearchParams({
