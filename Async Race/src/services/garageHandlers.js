@@ -37,6 +37,8 @@ export const handleUpdate = (ev, form, container) => {
     );
     form.reset();
     button.disabled = true;
+    formName.disabled = true;
+    formColor.disabled = true;
   });
 };
 export const handleGenerate = () => {

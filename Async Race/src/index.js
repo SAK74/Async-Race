@@ -2,6 +2,7 @@ import Route from './router/route';
 import Router from './router/router';
 import headerScript from './components/header';
 import handleGarage from './components/garage';
+import './styles/root.css';
 
 const garageRoute = new Route('garage', 'garage.html', handleGarage, true);
 const winnersRoute = new Route('winners', 'winners.html');

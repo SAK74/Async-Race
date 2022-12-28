@@ -3,11 +3,11 @@ import request from './request';
 import { getPage } from '../storage';
 
 const garageURL = new URL('/garage', SERVER);
-const headers = new Headers({
+export const headers = new Headers({
   'Content-Type': 'application/json',
 });
-const urlWithID = (id) => {
-  const url = new URL(garageURL.toString());
+export const urlWithID = (root, id) => {
+  const url = new URL(root.toString());
   url.pathname += `/${id}`;
   return url;
 };
@@ -32,14 +32,14 @@ export const addCar = (name = 'new car', color = 'red') => {
 
 export const removeCar = (id) => {
   garageURL.search = '';
-  return request(urlWithID(id), {
+  return request(urlWithID(garageURL, id), {
     method: 'DELETE',
   });
 };
 
 export const updateCar = (id, name, color) => {
   garageURL.search = '';
-  return request(urlWithID(id), {
+  return request(urlWithID(garageURL, id), {
     headers,
     method: 'PUT',
     body: JSON.stringify({ name, color }),
