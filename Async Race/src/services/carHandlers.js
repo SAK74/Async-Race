@@ -1,4 +1,4 @@
-import { fetchCars, removeCar } from './api';
+import { fetchCars, removeCar } from './api/garage';
 
 export const handleSelect = (name, color, id, form) => {
   const {

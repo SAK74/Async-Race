@@ -1,4 +1,4 @@
-import { setStatus } from './api';
+import setStatus from './api/engine';
 
 export const animationStart = async (id, carElement) => {
   const containerWidth = carElement.parentElement.clientWidth;

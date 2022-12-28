@@ -1,4 +1,4 @@
-import { setStatus } from './api';
+import setStatus from './api/engine';
 import { animationStart } from './carAnimation';
 
 const defineWinner = () => {

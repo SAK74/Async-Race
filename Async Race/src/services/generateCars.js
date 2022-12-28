@@ -1,4 +1,4 @@
-import { addCar } from './api';
+import { addCar } from './api/garage';
 
 const producer = [
   'Ford',

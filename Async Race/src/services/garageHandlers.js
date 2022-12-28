@@ -1,6 +1,6 @@
 import carContainer from '../components/carContainer';
 import { CARS_PER_PAGE } from '../SETTINGS';
-import * as api from './api';
+import * as api from './api/garage';
 import carsGenerate from './generateCars';
 import { getPage } from './storage';
 
