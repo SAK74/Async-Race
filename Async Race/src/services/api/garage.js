@@ -45,3 +45,8 @@ export const updateCar = (id, name, color) => {
     body: JSON.stringify({ name, color }),
   });
 };
+
+export const getCar = (id) => {
+  garageURL.search = '';
+  return request(urlWithID(garageURL, id));
+};

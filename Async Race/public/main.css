@@ -30,3 +30,10 @@ body {
   color: aliceblue;
 }
 
+/*!**************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles/winners.css ***!
+  \**************************************************************************/
+.header-clickable {
+  cursor: pointer;
+}
+

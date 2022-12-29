@@ -4,9 +4,13 @@ SVGSVGElement.prototype.setAttributes = function setAll(attrib) {
   });
 };
 
-export default function car(color = 'white') {
+export default function car(color = 'white', size = 'normal') {
   const carSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-  carSVG.setAttributes({ width: '120', height: '80', viewBox: '0 50 260 120' });
+  carSVG.setAttributes({
+    width: `${size === 'normal' ? '120' : '60'}`,
+    height: '80',
+    viewBox: '0 50 260 120',
+  });
   carSVG.innerHTML = `<defs>
   // </defs>
   // <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: ${color}; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)" >

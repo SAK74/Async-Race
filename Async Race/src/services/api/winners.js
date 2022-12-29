@@ -4,9 +4,12 @@ import request from './request';
 
 const winnersURL = new URL('/winners', SERVER);
 
-export const getWinners = () => {
+export const getWinners = (_sort, _order, _page = 1) => {
   const queryParam = new URLSearchParams({
     _limit: WINNERS_PER_PAGE,
+    _page,
+    _sort,
+    _order,
   });
   winnersURL.search = queryParam.toString();
   return request(winnersURL);
