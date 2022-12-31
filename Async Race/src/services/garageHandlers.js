@@ -2,7 +2,6 @@ import carContainer from '../components/carContainer';
 import { CARS_PER_PAGE } from '../SETTINGS';
 import * as api from './api/garage';
 import carsGenerate from './generateCars';
-import { getPage } from './storage';
 
 export const fetchToView = () => {
   const container = document.querySelector('.cars-container');
@@ -45,8 +44,4 @@ export const handleGenerate = () => {
   carsGenerate().then(() => {
     fetchToView();
   });
-};
-export const handlePage = () => {
-  document.getElementById('pagination').querySelector('span').innerText = getPage();
-  fetchToView();
 };

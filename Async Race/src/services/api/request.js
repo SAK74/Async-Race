@@ -1,3 +1,5 @@
+import { CARS_PER_PAGE, WINNERS_PER_PAGE } from '../../SETTINGS';
+
 export default function request(url, options) {
   return fetch(url, options).then((resp) => {
     if (!resp.ok) {
@@ -7,7 +9,17 @@ export default function request(url, options) {
       (url.pathname === '/garage' || url.pathname === '/winners')
       && !options?.method
     ) {
-      document.getElementById('total').innerText = resp.headers.get('X-total-Count');
+      const page = Number(new URL(url).searchParams.get('_page'));
+      const total = resp.headers.get('X-total-Count');
+      document.getElementById('total').innerText = total;
+      document.getElementById('page').innerText = page;
+      const pages = Math.ceil(
+        total / (url.pathname === '/garage' ? CARS_PER_PAGE : WINNERS_PER_PAGE),
+      );
+      document.getElementById('total-pages').innerText = pages;
+      document
+        .querySelector('.pagination button:last-of-type')
+        .toggleAttribute('disabled', page === pages);
     }
     return resp.json();
   });

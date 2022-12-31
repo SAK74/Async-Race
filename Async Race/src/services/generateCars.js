@@ -4,7 +4,7 @@ const producer = [
   'Ford',
   'Aston Martin',
   'BMW',
-  'Marcedes',
+  'Mercedes',
   'Toyota',
   'Chevrolet',
   'Bentley',

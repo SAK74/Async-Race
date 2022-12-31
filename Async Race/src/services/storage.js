@@ -3,9 +3,6 @@ export const getPage = () => {
   return storage ? parseInt(storage, 10) : 1;
 };
 export const setPage = (page) => {
+  document.getElementById('page').innerHTML = page;
   window.sessionStorage.setItem('garage-page', page);
-};
-export const getTotal = () => {
-  const storage = window.sessionStorage.getItem('garage-total');
-  return storage || 0;
 };

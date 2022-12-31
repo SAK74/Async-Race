@@ -35,6 +35,7 @@ export default class Router {
       for (let i = 0; i < this.routes.length; i += 1) {
         if (this.routes[i].index) {
           goTo(this.routes[i].element, this.routes[i].script);
+          window.location.hash = this.routes[i].name;
         }
       }
     }

@@ -7,6 +7,7 @@ import handleWinnersPage from './components/winners';
 
 const garageRoute = new Route('garage', 'garage.html', handleGarage, true);
 const winnersRoute = new Route('winners', 'winners.html', handleWinnersPage);
+window.sessionStorage.removeItem('garage-page');
 export default new Router([garageRoute, winnersRoute]);
 fetch(`${__dirname}src/views/header.html`)
   .then((resp) => resp.text())

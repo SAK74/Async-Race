@@ -1,30 +1,59 @@
 import '../styles/winners.css';
-import { renderTable } from '../services/winnersHandlers';
+import renderTable from '../services/winnersHandlers';
+import renderPagination from './pagination';
+
+class SearchParams {
+  constructor() {
+    this.page = 1;
+  }
+
+  sort;
+
+  order;
+
+  getPage = () => this.page;
+
+  setPage = (page) => {
+    this.page = page;
+  };
+}
+const searchParams = new SearchParams();
+
+const handleClick = (param, btn, another) => {
+  const { sort, order, page } = searchParams;
+  searchParams.order = sort === param && order === 'ASC' ? 'DESC' : 'ASC';
+  searchParams.sort = param;
+  renderTable({
+    sort: param,
+    order: searchParams.order,
+    page,
+  });
+  const thisBtn = btn;
+  const anotherBtn = another;
+  thisBtn.lastChild.innerText = sort === 'wins' && order === 'ASC' ? '▲' : '▼';
+  anotherBtn.lastChild.innerText = '';
+};
 
 export default function handleWinnersPage() {
   renderTable();
   const winsBtn = document.querySelector(' thead .header-clickable');
   const timesBtn = document.querySelector(' thead .time');
-  let isWinAsc;
-  let isTimeAsc;
   winsBtn.onclick = function click() {
-    renderTable({
-      sort: 'wins',
-      order: isWinAsc ? 'DESC' : 'ASC',
-    });
-    isWinAsc = !isWinAsc;
-    this.lastChild.innerText = isWinAsc ? '▲' : '▼';
-    isTimeAsc = undefined;
-    timesBtn.lastChild.innerText = '';
+    return handleClick('wins', this, timesBtn);
   };
   timesBtn.onclick = function click() {
-    renderTable({
-      sort: 'time',
-      order: isTimeAsc ? 'DESC' : 'ASC',
-    });
-    isTimeAsc = !isTimeAsc;
-    this.lastChild.innerText = isWinAsc ? '▲' : '▼';
-    isWinAsc = undefined;
-    winsBtn.lastChild.innerText = '';
+    return handleClick('time', this, winsBtn);
   };
+  const paginContainer = renderPagination(
+    (page) => renderTable({
+      page,
+      sort: searchParams.sort,
+      order: searchParams.order,
+    }),
+    {
+      getPage: searchParams.getPage,
+      setPage: searchParams.setPage,
+    },
+  );
+  document.getElementById('root').appendChild(paginContainer);
 }
