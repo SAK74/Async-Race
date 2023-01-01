@@ -1,7 +1,7 @@
-import { getCar } from './api/garage';
-import { getWinners } from './api/winners';
-import carRow from '../components/carRow';
-import { WINNERS_PER_PAGE } from '../SETTINGS';
+import { getCar } from '../../services/api/garage';
+import { getWinners } from '../../services/api/winners';
+import carRow from './carRow';
+import { WINNERS_PER_PAGE } from '../../SETTINGS';
 
 export default function renderTable({ page, sort, order } = { page: 1 }) {
   getWinners(sort, order, page).then((winners) => {

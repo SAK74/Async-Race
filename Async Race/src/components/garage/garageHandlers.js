@@ -1,6 +1,6 @@
-import carContainer from '../components/carContainer';
-import { CARS_PER_PAGE } from '../SETTINGS';
-import * as api from './api/garage';
+import carContainer from '../car_container/carContainer';
+import { CARS_PER_PAGE } from '../../SETTINGS';
+import * as api from '../../services/api/garage';
 import carsGenerate from './generateCars';
 
 export const fetchToView = () => {

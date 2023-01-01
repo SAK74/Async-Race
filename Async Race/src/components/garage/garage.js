@@ -1,15 +1,18 @@
-import '../styles/garage.css';
 import {
   fetchToView,
   handleCreate,
   handleGenerate,
   handleUpdate,
-} from '../services/garageHandlers';
-import { resetRace, startRace } from '../services/race';
-import renderPagination from './pagination';
-import * as storage from '../services/storage';
+} from './garageHandlers';
+import { resetRace, startRace } from './race';
+import renderPagination from '../pagination/pagination';
+import * as storage from '../../services/storage';
+import './garage.css';
+import html from '../../views/garage.html';
 
 export default function handleGarage() {
+  const root = document.getElementById('root');
+  root.innerHTML = html;
   const createForm = document.forms.create;
   const updateForm = document.forms.update;
   const carsContainer = document.querySelector('.cars-container');
@@ -24,7 +27,7 @@ export default function handleGarage() {
     handleGenerate();
   };
   const paginContainer = renderPagination(fetchToView, storage);
-  document.getElementById('root').appendChild(paginContainer);
+  root.appendChild(paginContainer);
   fetchToView();
   const raceBtn = document.getElementById('race');
   raceBtn.onclick = () => {

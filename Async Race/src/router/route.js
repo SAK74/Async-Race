@@ -1,7 +1,6 @@
 export default class Route {
-  constructor(name, element, script, index) {
+  constructor(name, script, index) {
     this.name = name;
-    this.element = element;
     this.index = index;
     this.script = script;
   }

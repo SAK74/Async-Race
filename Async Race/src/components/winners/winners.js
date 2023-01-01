@@ -1,6 +1,7 @@
-import '../styles/winners.css';
-import renderTable from '../services/winnersHandlers';
-import renderPagination from './pagination';
+import renderTable from './winnersHandlers';
+import renderPagination from '../pagination/pagination';
+import './winners.css';
+import html from '../../views/winners.html';
 
 class SearchParams {
   constructor() {
@@ -35,6 +36,8 @@ const handleClick = (param, btn, another) => {
 };
 
 export default function handleWinnersPage() {
+  const root = document.getElementById('root');
+  root.innerHTML = html;
   renderTable();
   const winsBtn = document.querySelector(' thead .header-clickable');
   const timesBtn = document.querySelector(' thead .time');
@@ -55,5 +58,5 @@ export default function handleWinnersPage() {
       setPage: searchParams.setPage,
     },
   );
-  document.getElementById('root').appendChild(paginContainer);
+  root.appendChild(paginContainer);
 }

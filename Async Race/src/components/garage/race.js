@@ -1,5 +1,5 @@
-import setStatus from './api/engine';
-import { animationStart } from './carAnimation';
+import setStatus from '../../services/api/engine';
+import { animationStart } from '../car_container/carAnimation';
 import saveWinner from './saveWinner';
 
 const defineWinner = () => {

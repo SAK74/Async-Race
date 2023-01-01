@@ -40,5 +40,5 @@ export const updateWinner = (id, wins, time) => {
 
 export const removeWinner = (id) => {
   winnersURL.search = '';
-  return request(urlWithID(winnersURL, id));
+  return request(urlWithID(winnersURL, id), { method: 'DELETE' });
 };

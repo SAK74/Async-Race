@@ -1,4 +1,4 @@
-import { addWinner, getWinner, updateWinner } from './api/winners';
+import { addWinner, getWinner, updateWinner } from '../../services/api/winners';
 
 export default function saveWinner(id, currentTime) {
   getWinner(id)

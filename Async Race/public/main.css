@@ -1,16 +1,12 @@
-/*!*************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles/garage.css ***!
-  \*************************************************************************/
-.container {
+/*!************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/components/garage/garage.css ***!
+  \************************************************************************************/
+/* .container {
   background: black;
-}
+} */
 form input[name="id"] {
   display: none;
 }
-/* .stop-btn:before {
-  border: 10px solid black;
-  content: "";
-} */
 .car-container {
   position: relative;
   height: 80px;
@@ -21,19 +17,19 @@ form input[name="id"] {
   z-index: -1;
 }
 
-/*!***********************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles/root.css ***!
-  \***********************************************************************/
+/*!**************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/components/winners/winners.css ***!
+  \**************************************************************************************/
+.header-clickable {
+  cursor: pointer;
+}
+
+/*!****************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/root.css ***!
+  \****************************************************************/
 body {
   margin: 0;
   background: black;
   color: aliceblue;
-}
-
-/*!**************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles/winners.css ***!
-  \**************************************************************************/
-.header-clickable {
-  cursor: pointer;
 }
 

@@ -1,5 +1,6 @@
-import { fetchCars, removeCar } from './api/garage';
-import { getPage, setPage } from './storage';
+import { fetchCars, removeCar } from '../../services/api/garage';
+import { removeWinner } from '../../services/api/winners';
+import { getPage, setPage } from '../../services/storage';
 
 export const handleSelect = (name, color, id, form) => {
   const {
@@ -16,6 +17,7 @@ export const handleSelect = (name, color, id, form) => {
 export const handleRemove = (_id, carWrapper) => {
   const container = document.querySelector('.cars-container');
   removeCar(_id).then(() => {
+    removeWinner(_id);
     if (container.children.length === 1) {
       setPage(getPage() - 1);
     }
