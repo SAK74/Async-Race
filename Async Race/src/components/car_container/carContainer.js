@@ -18,8 +18,16 @@ export default function carContainer(name, color, id) {
   const car = carSVG(color);
   rootCtn.appendChild(car);
 
-  goBtn.onclick = () => handleStart(id, car);
-  stopBtn.onclick = () => animationEnd(id, car);
+  goBtn.onclick = function go() {
+    this.disabled = true;
+    stopBtn.disabled = false;
+    handleStart(id, car);
+  };
+  stopBtn.onclick = function stop() {
+    this.disabled = true;
+    goBtn.disabled = false;
+    animationEnd(id, car);
+  };
 
   const updateForm = document.forms.update;
   selBtn.onclick = () => {

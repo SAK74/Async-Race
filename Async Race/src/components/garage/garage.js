@@ -30,11 +30,15 @@ export default function handleGarage() {
   root.appendChild(paginContainer);
   fetchToView();
   const raceBtn = document.getElementById('race');
-  raceBtn.onclick = () => {
+  const resetBtn = document.getElementById('reset');
+  raceBtn.onclick = function race() {
+    this.disabled = true;
+    resetBtn.disabled = false;
     startRace();
   };
-  const resetBtn = document.getElementById('reset');
-  resetBtn.onclick = () => {
+  resetBtn.onclick = function reset() {
+    this.disabled = true;
+    raceBtn.disabled = false;
     resetRace();
   };
 }

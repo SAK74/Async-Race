@@ -22,6 +22,10 @@ export const startRace = async () => {
   const cars = Array.from(carsCtns).map((car) => {
     const carElem = car.querySelector('svg');
     const id = parseInt(car.id.replace('car#', ''), 10);
+    const goBtn = car.querySelector('.go-btn');
+    goBtn.disabled = true;
+    const stopBtn = car.querySelector('.stop-btn');
+    stopBtn.disabled = false;
     return { id, carElem };
   });
   await Promise.all(cars.map(({ id, carElem }) => animationStart(id, carElem)));
