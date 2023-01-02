@@ -5,7 +5,7 @@ module.exports = {
   entry: "./src/index.js",
   output: {
     filename: "main.js",
-    path: path.resolve(__dirname, "public"),
+    path: path.resolve(__dirname, "build/Async-Race"),
   },
   mode: "development",
   plugins: [new MiniCssPlugin()],

@@ -4,10 +4,12 @@
   "description": "",
   "main": "index.js",
   "private": true,
+  "homepage": "https://rolling-scopes-school.github.io/sak74-JSFEEN2022Q3/Async-Race/",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "lint": "eslint --fix src"
+    "lint": "eslint --fix src",
+    "deploy": "gh-pages -d build "
   },
   "author": "SAK74",
   "license": "ISC",
@@ -16,6 +18,7 @@
     "eslint": "^8.2.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.2",
+    "gh-pages": "^4.0.0",
     "html-loader": "^4.2.0",
     "mini-css-extract-plugin": "^2.7.2",
     "webpack": "^5.75.0",
