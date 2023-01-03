@@ -18,4 +18,13 @@ module.exports = {
       { test: /.html$/, loader: "html-loader" },
     ],
   },
+  // watch: true,
+  devServer: {
+    static: {
+      directory: path.join(__dirname, "build/Async-Race"),
+    },
+    compress: true,
+    // host: "localhost",
+    port: 3001,
+  },
 };

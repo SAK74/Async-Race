@@ -1,4 +1,5 @@
 import html from '../../views/header.html';
+import './header.css';
 
 export default function renderHeader({ garageRoute, winnersRoute }) {
   const header = document.createElement('header');
