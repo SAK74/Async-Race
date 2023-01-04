@@ -1,4 +1,4 @@
-import car from '../car_container/car';
+import car from '../car/car';
 
 export default function tabRow(nr, color, name, wins, time) {
   const content = `

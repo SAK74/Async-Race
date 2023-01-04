@@ -1,7 +1,7 @@
 import { animationEnd, handleStart } from './carAnimation';
 import { handleRemove, handleSelect } from './carHandlers';
 import html from './view.html';
-import carSVG from './car';
+import carSVG from '../car/car';
 
 export default function carContainer(name, color, id) {
   const rootCtn = document.createElement('div');

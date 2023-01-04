@@ -1,7 +1,28 @@
-/* .container {
-  background: black;
-} */
-form input[name="id"] {
+h2 {
+  margin-left: 1rem;
+}
+form {
+  display: flex;
+  gap: 10px;
+}
+input {
+  color: var(--main-blue);
+  border: 2px solid var(--main-blue);
+  border-radius: 10px;
+  padding: 5px 10px;
+  background: transparent;
+  max-width: 190px;
+}
+input[type="color"] {
+  padding: 0;
+  width: 33px;
+  cursor: pointer;
+}
+
+input:active {
+  box-shadow: 2px 2px 15px var(--main-blue) inset;
+}
+input[name="id"] {
   display: none;
 }
 .car-container {
@@ -12,4 +33,7 @@ form input[name="id"] {
   position: absolute;
   left: 0;
   z-index: -1;
+}
+.controll * {
+  margin-block: 5px;
 }

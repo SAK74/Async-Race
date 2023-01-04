@@ -1,5 +1,30 @@
+:root {
+  --main-blue: #8707ff;
+}
 body {
-  margin: 0;
-  background: black;
+  margin: 15px;
+  background: #212121;
   color: aliceblue;
+}
+
+.button {
+  color: #8707ff;
+  border: 2px solid var(--main-blue);
+  border-radius: 10px;
+  padding: 10px 25px;
+  background: transparent;
+}
+
+.button:hover {
+  box-shadow: 2px 2px 15px var(--main-blue) inset;
+}
+
+.button:active {
+  box-shadow: 2px 2px 20px var(--main-blue) inset;
+}
+
+.button:disabled {
+  color: #450183;
+  border-color: #450183;
+  box-shadow: none;
 }
