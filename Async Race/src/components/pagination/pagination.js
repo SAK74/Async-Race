@@ -2,11 +2,11 @@ export default function pagination(renderPage, { getPage, setPage }) {
   const paginContainer = document.createElement('div');
   paginContainer.className = 'pagination';
   paginContainer.innerHTML = `
-    <button>Prev</button>
+    <button class="button">Prev</button>
     <span id="page">1</span>
     of
     <span id="total-pages">?</span>
-    <button>Next</button>
+    <button class="button">Next</button>
     `;
   const prevBtn = paginContainer.querySelector('button:first-of-type');
   const nextBtn = paginContainer.querySelector('button:last-of-type');

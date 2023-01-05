@@ -6,7 +6,7 @@ form {
   gap: 10px;
 }
 input {
-  color: var(--main-blue);
+  color: lightblue;
   border: 2px solid var(--main-blue);
   border-radius: 10px;
   padding: 5px 10px;
@@ -33,6 +33,9 @@ input[name="id"] {
   position: absolute;
   left: 0;
   z-index: -1;
+}
+.car-container .button {
+  padding: 5px 10px;
 }
 .controll * {
   margin-block: 5px;

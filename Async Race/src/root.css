@@ -1,5 +1,6 @@
 :root {
   --main-blue: #8707ff;
+  --main-red: #ff5a07;
 }
 body {
   margin: 15px;
@@ -8,11 +9,12 @@ body {
 }
 
 .button {
-  color: #8707ff;
   border: 2px solid var(--main-blue);
   border-radius: 10px;
   padding: 10px 25px;
   background: transparent;
+  cursor: pointer;
+  color: #8707ff;
 }
 
 .button:hover {
@@ -24,7 +26,8 @@ body {
 }
 
 .button:disabled {
+  box-shadow: none;
+  cursor: default;
   color: #450183;
   border-color: #450183;
-  box-shadow: none;
 }

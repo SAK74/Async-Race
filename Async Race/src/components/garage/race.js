@@ -1,5 +1,6 @@
 import setStatus from '../../services/api/engine';
 import { animationStart } from '../car_container/carAnimation';
+import popUp from '../popup/popup';
 import saveWinner from './saveWinner';
 
 const defineWinner = () => {
@@ -9,10 +10,9 @@ const defineWinner = () => {
   Promise.any(animations).then(({ currentTime, id }) => {
     const name = document
       .getElementById(`car#${id}`)
-      .querySelector('span').innerText;
+      .querySelector('span.name').innerText;
     const time = Math.round(currentTime) / 1000;
-    console.log(name, `${time}s`);
-    // todo add popup!
+    popUp(name, time);
     saveWinner(id, time);
   });
 };

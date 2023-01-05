@@ -1,0 +1,37 @@
+.popup {
+  position: fixed;
+  top: calc(50% - 90px);
+  left: calc(50% - 180px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  animation: entry 1s linear forwards;
+  border: 4px double gold;
+  border-radius: 5px;
+  width: 360px;
+  height: 180px;
+  padding: 10px;
+  text-align: center;
+  color: palegoldenrod;
+  outline: 2px solid aliceblue;
+}
+
+.cross {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  cursor: pointer;
+}
+
+.cup {
+  font-size: 3rem;
+}
+
+@keyframes entry {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1) rotate(720deg);
+  }
+}
