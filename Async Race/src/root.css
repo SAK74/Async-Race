@@ -28,6 +28,35 @@ body {
 .button:disabled {
   box-shadow: none;
   cursor: default;
-  color: #450183;
   border-color: #450183;
+}
+
+.pagination {
+  margin-block: 3rem;
+}
+
+.ctrl-btn {
+  position: relative;
+  z-index: 1;
+  border-radius: 5px;
+  border-radius: 5px;
+  padding: 5px 10px;
+  padding: 5px 10px;
+  background-color: #a4f1abb3;
+  cursor: pointer;
+  color: black;
+  border-color: black;
+}
+
+.ctrl-btn:hover {
+  box-shadow: 2px 2px 15px #449c4c inset;
+}
+.ctrl-btn:active {
+  box-shadow: 2px 2px 20px darkgray inset;
+}
+.ctrl-btn:disabled {
+  box-shadow: none;
+  border: none;
+  background-color: rgba(239, 239, 239, 0.3);
+  cursor: default;
 }

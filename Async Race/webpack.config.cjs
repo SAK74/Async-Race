@@ -16,6 +16,10 @@ module.exports = {
         use: [MiniCssPlugin.loader, "css-loader"],
       },
       { test: /.html$/, loader: "html-loader" },
+      {
+        test: /.wav$/,
+        type: "asset/resource",
+      },
     ],
   },
   // watch: true,

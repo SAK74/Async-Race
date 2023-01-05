@@ -1,6 +1,9 @@
 import './popup.css';
+import wav from './tadam.wav';
 
 export default function popUp(name, time) {
+  const wave = new Audio(wav);
+  wave.play();
   const popup = document.createElement('div');
   popup.className = 'popup';
   const carName = document.createElement('div');
@@ -20,6 +23,6 @@ export default function popUp(name, time) {
   const timer = window.setTimeout(() => {
     popup.remove();
     window.clearTimeout(timer);
-  }, 2500);
+  }, 4000);
   document.body.appendChild(popup);
 }

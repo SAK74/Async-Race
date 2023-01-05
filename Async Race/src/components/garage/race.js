@@ -10,7 +10,7 @@ const defineWinner = () => {
   Promise.any(animations).then(({ currentTime, id }) => {
     const name = document
       .getElementById(`car#${id}`)
-      .querySelector('span.name').innerText;
+      .querySelector('.name').innerText;
     const time = Math.round(currentTime) / 1000;
     popUp(name, time);
     saveWinner(id, time);

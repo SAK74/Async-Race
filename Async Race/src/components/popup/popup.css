@@ -1,5 +1,6 @@
 .popup {
   position: fixed;
+  z-index: 99;
   top: calc(50% - 90px);
   left: calc(50% - 180px);
   display: flex;
@@ -11,6 +12,7 @@
   width: 360px;
   height: 180px;
   padding: 10px;
+  background: gray;
   text-align: center;
   color: palegoldenrod;
   outline: 2px solid aliceblue;

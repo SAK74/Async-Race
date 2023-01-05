@@ -6,16 +6,16 @@ form {
   gap: 10px;
 }
 input {
-  color: lightblue;
   border: 2px solid var(--main-blue);
   border-radius: 10px;
+  max-width: 190px;
   padding: 5px 10px;
   background: transparent;
-  max-width: 190px;
+  color: lightblue;
 }
 input[type="color"] {
-  padding: 0;
   width: 33px;
+  padding: 0;
   cursor: pointer;
 }
 
@@ -27,16 +27,39 @@ input[name="id"] {
 }
 .car-container {
   position: relative;
-  height: 80px;
+  height: 100px;
+  padding-bottom: 10px;
+  margin-block: 25px;
+  border-bottom: 4px dashed gray;
 }
 .car-container svg {
   position: absolute;
   left: 0;
-  z-index: -1;
 }
 .car-container .button {
   padding: 5px 10px;
 }
 .controll * {
   margin-block: 5px;
+}
+.name {
+  margin: 0 2rem 0.4rem;
+  font-size: 1.2rem;
+  height: 1.4rem;
+}
+.go-btn {
+  margin-left: 1rem;
+}
+.car-container::after {
+  content: "\1F3C1";
+  position: absolute;
+  bottom: 0;
+  right: 120px;
+  font-size: 2rem;
+}
+#race {
+  border-color: var(--main-red);
+}
+#race:disabled {
+  border: none;
 }

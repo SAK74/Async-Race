@@ -3,16 +3,18 @@
   <form name="create">
     <input name="name" id="create-name" />
     <input name="color" type="color" name="color" />
-    <button>Create</button>
+    <button class="ctrl-btn">Create</button>
   </form>
   <form name="update">
     <input type="text" name="name" disabled />
     <input type="color" name="color" disabled value="#000000" />
     <input name="id" />
-    <button type="submit" disabled name="button">Update</button>
+    <button type="submit" disabled name="button" class="ctrl-btn">
+      Update
+    </button>
   </form>
-  <button id="race">Race</button>
-  <button id="reset" disabled>Reset</button>
-  <button id="generate">Generate 100 cars</button>
+  <button id="race" class="ctrl-btn">Race</button>
+  <button id="reset" disabled class="ctrl-btn">Reset</button>
+  <button id="generate" class="ctrl-btn">Generate 100 cars</button>
 </div>
 <div class="cars-container"></div>
