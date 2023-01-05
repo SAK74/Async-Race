@@ -6,6 +6,7 @@ module.exports = {
   output: {
     filename: "main.js",
     path: path.resolve(__dirname, "build/Async-Race"),
+    assetModuleFilename: "assets/[hash][ext][query]",
   },
   mode: "development",
   plugins: [new MiniCssPlugin()],
