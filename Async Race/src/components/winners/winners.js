@@ -31,7 +31,7 @@ const handleClick = (param, btn, another) => {
   });
   const thisBtn = btn;
   const anotherBtn = another;
-  thisBtn.lastChild.innerText = sort === 'wins' && order === 'ASC' ? '▲' : '▼';
+  thisBtn.lastChild.innerText = sort === param && order === 'ASC' ? '▲' : '▼';
   anotherBtn.lastChild.innerText = '';
 };
 

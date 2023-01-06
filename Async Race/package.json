@@ -10,7 +10,7 @@
     "build": "webpack",
     "lint": "eslint --fix src",
     "deploy": "gh-pages -d build ",
-    "serve": "webpack serve"
+    "start": "webpack serve"
   },
   "author": "SAK74",
   "license": "ISC",
