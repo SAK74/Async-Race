@@ -1,0 +1,18 @@
+footer {
+  display: flex;
+  align-items: center;
+  background: #000000;
+  font-weight: 600;
+  padding-inline: 20px;
+}
+footer span:first-of-type {
+  flex-grow: 1;
+}
+.author {
+  color: inherit;
+}
+a {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 1rem;
+}

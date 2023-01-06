@@ -3,9 +3,12 @@
   --main-red: #ff5a07;
 }
 body {
-  margin: 15px;
+  margin: 0;
   background: #212121;
   color: aliceblue;
+}
+#root {
+  margin: 15px;
 }
 
 .button {

@@ -14,3 +14,7 @@ nav * {
 nav .button:disabled {
   border-color: var(--main-red);
 }
+
+a {
+  text-decoration: none;
+}
