@@ -11,13 +11,16 @@ export default function pagination(renderPage, { getPage, setPage }) {
   const prevBtn = paginContainer.querySelector('button:first-of-type');
   const nextBtn = paginContainer.querySelector('button:last-of-type');
   prevBtn.toggleAttribute('disabled', getPage() === 1);
-  nextBtn.onclick = () => {
+  nextBtn.onclick = function next() {
+    const totalPage = +this.previousElementSibling.innerText;
+    const page = +getPage();
+    this.setAttribute('disabled', page === totalPage - 1);
     prevBtn.disabled = false;
-    setPage(getPage() + 1);
-    renderPage(getPage());
+    setPage(page + 1);
+    renderPage(page + 1);
   };
-  prevBtn.onclick = function handler() {
-    const page = getPage();
+  prevBtn.onclick = function prev() {
+    const page = +getPage();
     this.toggleAttribute('disabled', page === 2);
     nextBtn.disabled = false;
     setPage(page - 1);
