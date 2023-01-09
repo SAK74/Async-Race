@@ -9,8 +9,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
     "lint": "eslint --fix src",
-    "deploy": "gh-pages -d build ",
-    "start": "webpack serve"
+    "deploy": "npm run lint && webpack && gh-pages -d build ",
+    "start": "webpack && webpack serve"
   },
   "author": "SAK74",
   "license": "ISC",

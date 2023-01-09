@@ -1,4 +1,4 @@
-import { CARS_PER_PAGE, WINNERS_PER_PAGE } from '../../SETTINGS';
+import setPagination from '../setPagination';
 
 export default function request(url, options) {
   return fetch(url, options).then((resp) => {
@@ -9,17 +9,7 @@ export default function request(url, options) {
       (url.pathname === '/garage' || url.pathname === '/winners')
       && !options?.method
     ) {
-      const page = Number(new URL(url).searchParams.get('_page'));
-      const total = resp.headers.get('X-total-Count');
-      document.getElementById('total').innerText = total;
-      document.getElementById('page').innerText = page;
-      const pages = Math.ceil(
-        total / (url.pathname === '/garage' ? CARS_PER_PAGE : WINNERS_PER_PAGE),
-      );
-      document.getElementById('total-pages').innerText = pages;
-      document
-        .querySelector('.pagination button:last-of-type')
-        .toggleAttribute('disabled', page === pages);
+      setPagination(+resp.headers.get('X-total-Count'), url);
     }
     return resp.json();
   });
