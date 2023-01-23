@@ -4,7 +4,7 @@
   "description": "Learning project",
   "main": "index.js",
   "private": true,
-  "homepage": "https://rolling-scopes-school.github.io/sak74-JSFEEN2022Q3/Async-Race/",
+  "homepage": "https://sak74.github.io/Async-Race/",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",

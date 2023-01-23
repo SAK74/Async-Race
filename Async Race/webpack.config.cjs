@@ -5,7 +5,7 @@ module.exports = {
   entry: "./src/index.js",
   output: {
     filename: "main.js",
-    path: path.resolve(__dirname, "build/Async-Race"),
+    path: path.resolve(__dirname, "build"),
     assetModuleFilename: "assets/[hash][ext][query]",
   },
   mode: "development",
@@ -25,7 +25,7 @@ module.exports = {
   },
   devServer: {
     static: {
-      directory: path.join(__dirname, "build/Async-Race"),
+      directory: path.join(__dirname, "build"),
     },
     compress: true,
     port: 3001,
