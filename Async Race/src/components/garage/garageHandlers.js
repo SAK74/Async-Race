@@ -16,7 +16,7 @@ export const fetchToView = () => {
 export const handleCreate = (ev, form, container) => {
   ev.preventDefault();
   api.addCar(form.name.value, form.color.value).then((car) => {
-    document.getElementById('total').innerText = parseInt(document.getElementById('total').innerText, 10) + 1;
+    document.getElementById('total').innerText = +document.getElementById('total').innerText + 1;
     if (container.children.length < CARS_PER_PAGE) {
       const { name, color, id } = car;
       container.appendChild(carContainer(name, color, id));

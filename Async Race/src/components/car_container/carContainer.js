@@ -8,10 +8,12 @@ export default function carContainer(name, color, id) {
   rootCtn.classList.add('car-container');
   rootCtn.id = `car#${id}`;
   rootCtn.innerHTML = html;
+
   const selBtn = rootCtn.querySelector('.select-btn');
   const removeBtn = rootCtn.querySelector('.remove-btn');
   const carName = rootCtn.querySelector('.name');
   carName.innerText = name;
+
   const goBtn = rootCtn.querySelector('.go-btn');
   const stopBtn = rootCtn.querySelector('.stop-btn');
 
