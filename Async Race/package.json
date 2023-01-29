@@ -7,9 +7,10 @@
   "homepage": "https://sak74.github.io/Async-Race/",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
+    "build": "webpack build --mode=production",
     "lint": "eslint --fix src",
-    "deploy": "npm run lint && webpack && gh-pages -o private -d build ",
+    "predeploy": "npm run lint && npm run build",
+    "deploy": "gh-pages -d build -o private",
     "start": "webpack serve"
   },
   "author": "SAK74",
@@ -25,5 +26,8 @@
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^4.11.1"
+  },
+  "dependencies": {
+    "html-webpack-plugin": "^5.5.0"
   }
 }
