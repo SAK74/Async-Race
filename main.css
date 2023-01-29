@@ -1,6 +1,3 @@
-/*!************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/components/header/header.css ***!
-  \************************************************************************************/
 .title {
   text-align: center;
   text-transform: uppercase;
@@ -22,9 +19,6 @@ a {
   text-decoration: none;
 }
 
-/*!**********************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/components/popup/popup.css ***!
-  \**********************************************************************************/
 .popup {
   position: fixed;
   z-index: 99;
@@ -63,9 +57,6 @@ a {
   }
 }
 
-/*!************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/components/garage/garage.css ***!
-  \************************************************************************************/
 h2 {
   margin-left: 1rem;
 }
@@ -132,9 +123,6 @@ input[name="id"] {
   border: none;
 }
 
-/*!**************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/components/winners/winners.css ***!
-  \**************************************************************************************/
 .header-clickable {
   cursor: pointer;
 }
@@ -157,9 +145,6 @@ table {
   border-collapse: collapse;
 }
 
-/*!************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/components/footer/footer.css ***!
-  \************************************************************************************/
 footer {
   display: flex;
   align-items: center;
@@ -179,9 +164,6 @@ a {
   margin-right: 1rem;
 }
 
-/*!****************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/root.css ***!
-  \****************************************************************/
 :root {
   --main-blue: #8707ff;
   --main-red: #ff5a07;
