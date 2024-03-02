@@ -1,6 +1,8 @@
 .title {
-  text-align: center;
+  text-align: right;
   text-transform: uppercase;
+  margin-right: 3rem;
+  font-size: 2.5rem;
 }
 
 nav {

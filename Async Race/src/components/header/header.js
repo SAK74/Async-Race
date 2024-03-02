@@ -1,3 +1,4 @@
+import waveText from '../../utils/text-wave';
 import html from '../../views/header.html';
 import './header.css';
 
@@ -12,5 +13,6 @@ export default function renderHeader({ garageRoute, winnersRoute }) {
     winnersBtn.disabled = winnersRoute.isActive();
     garageBtn.disabled = garageRoute.isActive();
   });
+  waveText(header.querySelector('.title'));
   return header;
 }
