@@ -3,16 +3,14 @@
   95% {
     opacity: 0.7;
     color: inherit;
-    transform: rotateY(90deg) scale(1.5);
   }
 }
 
 .letter {
   animation: flash 2s infinite;
-  animation-delay: calc(0.07s * var(--i));
+  animation-delay: calc(0.05s * var(--i));
   color: white;
   opacity: 1;
-  transform: rotateZ(45deg);
 }
 
 .title {
